@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #ffffff;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #FF6FB5;
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-display {
+    font-family: 'Unbounded', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-pink {
+    background: linear-gradient(135deg, #FF6FB5, #FF3D8E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-pink {
+    background: linear-gradient(135deg, #FF6FB5, #FF3D8E);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(255, 111, 181, 0.2);
+  }
+
+  .masonry-grid {
+    columns: 1;
+    column-gap: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .masonry-grid {
+      columns: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .masonry-grid {
+      columns: 3;
+    }
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+}
